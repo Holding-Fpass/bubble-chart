@@ -134,7 +134,7 @@ Is an enumeration of all supported states.
 <br>
 
 > <br>
-
+>
 >**CONTENT_TYPE**
 >
 > Active when the bubbles that represent content types are in focus.
