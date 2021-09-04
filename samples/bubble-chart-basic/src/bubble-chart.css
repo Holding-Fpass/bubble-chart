@@ -1,0 +1,149 @@
+body {
+  background-color: #131723;
+}
+
+.node {
+  cursor: pointer;
+  opacity: 1;
+  /* stroke: #000;
+  stroke-dasharray: 10;
+  stroke-linecap: "round";
+  padding: 50px; */
+  /* border-style: dashed;
+  border-color: red;
+  border-width: 3px; */
+  padding: 20px;
+}
+
+.label{
+  color: #131723 !important;
+  font-weight: bold !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  text-shadow: none !important;
+  font-size: 16px !important;
+}
+
+.node--parent
+{
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 8;
+}
+
+.node--parent--hidden
+{
+  stroke-width: 0px;
+}
+
+.node--parent--nodata
+{
+  stroke-width: 0px;
+}
+
+.node--parent--leaf
+{
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 8;
+}
+
+.node--parent--leaf--hidden
+{
+  stroke-width: 0px;
+}
+
+.node--leaf {
+  fill: rgba(255, 255, 255, 0.493);
+}
+
+.label {
+  font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
+
+#tooltip {
+  color: white;
+  background-color: rgb(9, 12, 21);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 100px;
+  border-radius: 15px;
+  min-width: 300px;
+  top: 100px;
+  padding: 24px;
+}
+
+.tooltip-name {
+  width: 100%;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif !important;
+  margin-bottom: 20px;
+}
+
+.tooltip-name > h2 {
+  margin: 0px;
+}
+
+.tooltip-name>svg {
+  margin-left: auto;
+}
+
+.tooltip-content {
+  display: flex;
+  margin-top: 0px;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.tooltip-content>svg {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.tooltip-time {
+  display: flex;
+  height: auto;
+  margin-left: 10px;
+}
+
+.tooltip-number{
+  font-size: 30px;
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  margin-top: auto;
+}
+
+.tooltip-plus{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 4px;
+}
+
+.tooltip-timeletter{
+  display: flex;
+  margin-top: auto;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-bottom: 2px;
+  padding: 0px;
+}
+
+.tooltip-content-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltip-content-info > p {
+  margin: 0px;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.tooltip-line {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom-style: dashed;
+  border-width: 2px;
+}

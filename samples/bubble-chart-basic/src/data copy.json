@@ -1,0 +1,129 @@
+{
+  "name": "root",
+  "children": [
+    {
+      "name": "HARD SKILL",
+      "children": [
+        {
+          "name": "HARD SKILL",
+          "durationTotal": 212.74,
+          "timeWatched": 211,
+          "children": [
+            {
+              "value": 212.74,
+              "name": "ALTAPERFORMANCE"
+            },
+            {
+              "value": 212.74,
+              "name": "DESENVOLVIMENTOPESSOAL"
+            },
+            {
+              "value": 212.74,
+              "name": "LIDERANÇA"
+            },
+            {
+              "value": 212.74,
+              "name": "LIDERANÇA"
+            },
+            {
+              "value": 212.74,
+              "name": "LIDERANÇA"
+            },
+            {
+              "value": 212.74,
+              "name": "LIDERANÇA"
+            },
+            {
+              "value": 212.74,
+              "name": "LIDERANÇA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SOFT SKILL",
+      "children": [
+        {
+          "name": "SOFT SKILL",
+          "durationTotal": 90.09,
+          "timeWatched": 86,
+          "children": [
+            {
+              "value": 90.09,
+              "name": "HACKTHEFUTURE"
+            },
+            {
+              "value": 90.09,
+              "name": "NEGÓCIOS"
+            },
+            {
+              "value": 90.09,
+              "name": "EMPREENDEDORISMO"
+            },
+            {
+              "value": 212.74,
+              "name": "LIDERANÇA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GRUPO 3",
+      "children": [
+        {
+          "name": "GRUPO 3",
+          "durationTotal": 90.09,
+          "timeWatched": 46,
+          "children": [
+            {
+              "value": 130.09,
+              "name": "HACKTHEFUTURE"
+            },
+            {
+              "value": 130.09,
+              "name": "NEGÓCIOS"
+            },
+            {
+              "value": 130.09,
+              "name": "EMPREENDEDORISMO"
+            },
+            {
+              "value": 130.09,
+              "name": "EMPREENDEDORISMO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GRUPO 4",
+      "children": [
+        {
+          "name": "GRUPO 4",
+          "durationTotal": 90.09,
+          "timeWatched": 16,
+          "children": [
+            {
+              "value": 130.09,
+              "name": "HACKTHEFUTURE"
+            },
+            {
+              "value": 130.09,
+              "name": "NEGÓCIOS"
+            },
+            {
+              "value": 130.09,
+              "name": "EMPREENDEDORISMO"
+            },
+            {
+              "value": 130.09,
+              "name": "EMPREENDEDORISMO"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
