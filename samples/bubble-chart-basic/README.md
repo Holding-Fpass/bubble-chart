@@ -37,7 +37,7 @@ The component code are grouped by bubble-chart*.js files with specific responsab
 <br>
 
 ## App.js
-<hr>
+
 The standard React app function with chart sample initialization.
 It uses the mock data.json to simulate the fpass learning analytics response.
 The options sample has all supported properties defined;
@@ -48,7 +48,7 @@ The bubble-chart.css referenced will be replaced (in a future version) by dynami
 <br>
 
 ## bubble-chart.js
-<hr>
+
 
 The React Component entry point.
 It's methods are specfic for the component basic declaration and execution.
@@ -105,7 +105,7 @@ Is the handler for buble clicks.
 <br>
 
 ## bubble-chart-options.js
-<hr>
+
 
 It's the unique class beyond the component.
 The BubbleChartOptions class is the place to validate and set default values for the component logic and presentation.
@@ -116,7 +116,7 @@ It can be improved in the future versions.
 <br>
 
 ## bubble-chart-states.js
-<hr>
+
 
 Holds all the state manipulation.
 
@@ -175,7 +175,7 @@ The the safest way to change the current state
 <br>
 
 ## bubble-chart-data.js
-<hr>
+
 
 Holds all the data manipulation methods.
 
@@ -214,7 +214,7 @@ Safelly clones a javascript object for manipulation without affecting the source
 <br>
 
 ## bubble-chart-d3.js
-<hr>
+
 
 The chart uses d3js to render the bubbles.
 This file holds all d3 manipulation necessary to customize the chart for fpass requirements.
@@ -250,7 +250,7 @@ Start the zoom transition for an specific view.
 <br>
 
 ## bubble-chart-presenter.js
-<hr>
+
 
 Is responsible for all the presentation values and logic for the chart.
 
@@ -323,7 +323,7 @@ Apply all the presentation logic for elements.
 <br>
 
 ## bubble-chart-tooltip.js
-<hr>
+
 
 Specific for the hashtag tooltip manipulation.
 
@@ -349,7 +349,7 @@ Remove the tooltip dom element and change the chart state.
 <br>
 
 ## bubble-chart.css
-<hr>
+
 
 Contains all the static styles necessary for the chart.
 It can be replaced for dynamic css generation ina future version.
