@@ -10,26 +10,26 @@ var that;
 
 class BubbleChart extends Component
 {
-  componentDidMount()
-  {
-    that = this;
-
-    this.options = new BubbleChartOptions(this.props.options);
-
-    setState(states.CONTENT_TYPE);
-
-    var object = data.prepare(this.props.data);
-
-    init(that, object, this.onClick);
-
-    presenter.present(object, this.options);
-  }
-
   render()
   {
     return (
       <svg width={this.props.width} height={this.props.height}></svg>
     )
+  }
+
+  load(o, d)
+  {
+    that = this;
+
+    this.options = new BubbleChartOptions(o);
+
+    setState(states.CONTENT_TYPE);
+
+    var object = data.prepare(d);
+
+    init(that, object, this.onClick);
+
+    presenter.present(object, this.options);
   }
 
   onClick(e, d)
