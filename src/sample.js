@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import BubbleChart from './bubble-chart'
+import BubbleChart from '.'
 import object from './data.json'
 import './bubble-chart.css';
 

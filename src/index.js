@@ -8,7 +8,7 @@ import * as presenter from './bubble-chart-presenter'
 
 var that;
 
-class BubbleChart extends Component
+export default class BubbleChart extends Component
 {
   render()
   {
@@ -54,5 +54,3 @@ class BubbleChart extends Component
     }
   }
 }
-
-export default BubbleChart;
