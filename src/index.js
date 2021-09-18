@@ -10,6 +10,12 @@ var that;
 
 export default class BubbleChart extends Component
 {
+  constructor()
+  {
+    super();
+    window.bubbleChart = this;
+  }
+
   render()
   {
     return (
