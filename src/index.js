@@ -1,5 +1,6 @@
 /* eslint-disable no-sequences */
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'
 import BubbleChartOptions from './bubble-chart-options';
 import { init, zoom, focus } from './bubble-chart-d3'
 import { state, states, setState } from './bubble-chart-states'
@@ -18,9 +19,12 @@ export default class BubbleChart extends Component
 
   render()
   {
-    return (
-      <svg width={this.props.width} height={this.props.height}></svg>
-    )
+    return React.createElement('svg',
+      {
+        width: this.props.width,
+        height: this.props.height,
+      },
+      null);
   }
 
   load(o, d)
