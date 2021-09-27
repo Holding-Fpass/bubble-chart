@@ -16,7 +16,12 @@ export default class BubbleChart extends Component
     super();
     window.bubbleChart = this;
 
-    if (this.props.options && this.props.data)
+
+  }
+
+  componentDidMount()
+  {
+    if (this.props && this.props.options && this.props.data)
     {
       this.load(this.props.options, this.props.data);
     }
