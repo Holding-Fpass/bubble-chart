@@ -14,7 +14,7 @@ var diameter;
 
 export function init(that, object, onClick)
 {
-  var svg = d3.select("svg");
+  var svg = d3.select("svg.udiurYssf");
   margin = 0;
   diameter = +svg.attr("width");
   g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");

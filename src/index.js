@@ -33,6 +33,7 @@ export default class BubbleChart extends Component
       {
         width: this.props.width,
         height: this.props.height,
+        className: "udiurYssf"
       },
       null);
   }
