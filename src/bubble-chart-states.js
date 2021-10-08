@@ -1,3 +1,5 @@
+import { hideTooltip } from "./bubble-chart-tooltip";
+
 export var state;
 
 export var states =
@@ -14,6 +16,8 @@ export function setState(newState)
     switch (state)
     {
         case states.CONTENT_TYPE:
+            hideTooltip();
+
             var els = document.getElementsByClassName("node--parent--leaf");
 
             Array.from(els).forEach((el) =>

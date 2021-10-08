@@ -2,114 +2,118 @@
   "name": "root",
   "children": [
     {
+      "durationTotal": 23521.94,
+      "timeWatched": 4747.75,
       "name": "HARD SKILL",
-      "durationTotal": 212.74,
-      "timeWatched": 211,
       "children": [
         {
-          "value": 212.74,
-          "name": "ALTAPERFORMANCE"
+          "name": "PROJETO",
+          "value": 95.88,
+          "durationTotal": 95.88,
+          "timeWatched": 29.33
         },
         {
-          "value": 212.74,
-          "name": "DESENVOLVIMENTOPESSOAL"
+          "name": "INOVAÇÃO",
+          "value": 659.35,
+          "durationTotal": 659.35,
+          "timeWatched": 2.14
         },
         {
-          "value": 212.74,
-          "name": "LIDERANÇA"
+          "name": "DATASCIENCE",
+          "value": 5623.77,
+          "durationTotal": 5623.77,
+          "timeWatched": 126.11
         },
         {
-          "value": 212.74,
-          "name": "LIDERANÇA"
+          "name": "DEEPLEARNING",
+          "value": 1461.65,
+          "durationTotal": 1461.65,
+          "timeWatched": 1425
         },
         {
-          "value": 212.74,
-          "name": "LIDERANÇA"
+          "name": "#INTELIGENCIAARTIFICIAL",
+          "value": 2463.4,
+          "durationTotal": 2463.4,
+          "timeWatched": 4.41
         },
         {
-          "value": 212.74,
-          "name": "LIDERANÇA"
+          "name": "MACHINELEARNING",
+          "value": 1557.53,
+          "durationTotal": 1557.53,
+          "timeWatched": 1454.33
         },
         {
-          "value": 212.74,
-          "name": "LIDERANÇA"
+          "name": "TECNOLOGIA",
+          "value": 659.35,
+          "durationTotal": 659.35,
+          "timeWatched": 2.14
+        },
+        {
+          "name": "INTELIGENCIAARTIFICIAL",
+          "value": 4638.36,
+          "durationTotal": 4638.36,
+          "timeWatched": 1547.14
+        },
+        {
+          "name": "EXCELENCIA",
+          "value": 2463.4,
+          "durationTotal": 2463.4,
+          "timeWatched": 4.41
+        },
+        {
+          "name": "ALGORITMOS",
+          "value": 643,
+          "durationTotal": 643,
+          "timeWatched": 1.69
+        },
+        {
+          "name": "MACHINELEARNINGCANVAS",
+          "value": 738.88,
+          "durationTotal": 738.88,
+          "timeWatched": 31.03
+        },
+        {
+          "name": "TEACHABLE MACHINE",
+          "value": 2517.36,
+          "durationTotal": 2517.36,
+          "timeWatched": 120
         }
       ]
     },
     {
+      "durationTotal": 2751.74,
+      "timeWatched": 716,
       "name": "SOFT SKILL",
-      "durationTotal": 90.09,
-      "timeWatched": 86,
       "children": [
         {
-          "durationTotal": 212.74,
-          "timeWatched": 60,
-          "value": 90.09,
-          "name": "#HACKTHEFUTURE"
+          "name": "HACKTHEFUTURE",
+          "value": 220.81,
+          "durationTotal": 220.81,
+          "timeWatched": 118.33
         },
         {
-          "durationTotal": 212.74,
-          "timeWatched": 150,
-          "value": 90.09,
-          "name": "#NEGÓCIOS"
+          "name": "FUTURO",
+          "value": 220.81,
+          "durationTotal": 220.81,
+          "timeWatched": 118.33
         },
         {
-          "durationTotal": 212.74,
-          "timeWatched": 100,
-          "value": 90.09,
-          "name": "#EMPREENDEDORISMO"
+          "name": "INOVAÇÃO",
+          "value": 917.25,
+          "durationTotal": 917.25,
+          "timeWatched": 238.67
         },
         {
-          "durationTotal": 212.74,
-          "timeWatched": 200,
-          "value": 212.74,
-          "name": "#LIDERANÇA"
-        }
-      ]
-    },
-    {
-      "name": "GRUPO 3",
-      "durationTotal": 90.09,
-      "timeWatched": 46,
-      "children": [
-        {
-          "value": 130.09,
-          "name": "HACKTHEFUTURE"
+          "name": "TECNOLOGIA",
+          "value": 696.43,
+          "durationTotal": 696.43,
+          "timeWatched": 120.33
         },
         {
-          "value": 130.09,
-          "name": "NEGÓCIOS"
-        },
-        {
-          "value": 130.09,
-          "name": "EMPREENDEDORISMO"
-        },
-        {
-          "value": 130.09,
-          "name": "EMPREENDEDORISMO"
-        }
-      ]
-    },
-    {
-      "name": "GRUPO 4",
-      "durationTotal": 90.09,
-      "timeWatched": 16,
-      "children": [
-        {
-          "value": 130.09,
-          "name": "HACKTHEFUTURE"
-        },
-        {
-          "value": 130.09,
-          "name": "NEGÓCIOS"
-        },
-        {
-          "value": 130.09,
-          "name": "EMPREENDEDORISMO"
-        },
-        {
-          "value": 130.09,
-          "name": "EMPREENDEDORISMO"
+          "name": "INTELIGENCIAARTIFICIAL",
+          "value": 696.43,
+          "durationTotal": 696.43,
+          "timeWatched": 120.33
         }
       ]
     }

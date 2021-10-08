@@ -66,6 +66,7 @@ export default class BubbleChart extends Component
       }
       else if (d.data && d.data.type == "hash_tag")
       {
+
         setState(states.CONTENT_TYPE);
       }
       else

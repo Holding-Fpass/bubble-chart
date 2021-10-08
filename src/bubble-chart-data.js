@@ -9,9 +9,16 @@ export function prepare(rawData, options)
 
     for (var i = 0; i < root.children.length; i++)
     {
-        var item = root.children[i];
+        var content = root.children[i];
 
-        wrapChildren(item, "hash_tag", i);
+        for (var ii = 0; ii < content.children.length; ii++)
+        {
+            // var tag = content.children[ii];
+
+            wrapChildren(content, "hash_tag_" + i, ii);
+        }
+
+        //wrapChildren(content, "hash_tag", i);
     }
 
     wrapChildren(root, "content_type", 0);

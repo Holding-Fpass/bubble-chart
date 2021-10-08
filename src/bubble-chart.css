@@ -13,6 +13,7 @@ body {
   border-color: red;
   border-width: 3px; */
   padding: 20px;
+
 }
 
 .label{
@@ -28,16 +29,19 @@ body {
   stroke: white;
   stroke-width: 3px;
   stroke-dasharray: 8;
+
 }
 
 .node--parent--hidden
 {
   stroke-width: 0px;
+
 }
 
 .node--parent--nodata
 {
   stroke-width: 0px;
+
 }
 
 .node--parent--leaf
@@ -45,15 +49,19 @@ body {
   stroke: white;
   stroke-width: 3px;
   stroke-dasharray: 8;
+
 }
 
 .node--parent--leaf--hidden
 {
   stroke-width: 0px;
+
 }
 
 .node--leaf {
   fill: rgba(255, 255, 255, 0.493);
+
+  stroke-width: 0;
 }
 
 .label {
@@ -62,7 +70,7 @@ body {
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }
 
-#tooltip {
+#tooltip-bubble-chart {
   color: white;
   background-color: rgb(9, 12, 21);
   position: fixed;

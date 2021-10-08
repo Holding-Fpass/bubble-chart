@@ -25,7 +25,7 @@ export function getHueSaturation(d)
 
 export function getCircleClass(d)
 {
-    if (d.data && d.data.type == "w_content_type")
+    if (d.data && d.data.type && d.data.type.startsWith("w_content_type"))
     {
         if (d.data)
         {
@@ -40,9 +40,10 @@ export function getCircleClass(d)
     {
         return "node";
     }
-    else if (d.data && d.data.type == "w_hash_tag")
+    else if (d.data && d.data.type && d.data.type.startsWith("w_hash"))
     {
-        if (d.data.durationTotal)
+
+        if (d.data)
         {
             return "node--parent--leaf--hidden";
         }
@@ -50,8 +51,18 @@ export function getCircleClass(d)
         {
             return "node--parent--nodata";
         }
+
+
+        // if (d.data.durationTotal)
+        // {
+        //     return "node--parent--leaf--hidden";
+        // }
+        // else
+        // {
+        //     return "node--parent--nodata";
+        // }
     }
-    else if (d.data && d.data.type == "hash_tag")
+    else if (d.data && d.data.type && d.data.type.startsWith("hash_tag"))
     {
         return "node--leaf";
     }
@@ -62,12 +73,19 @@ export function getCircleClass(d)
 function getTotalLineRadius(node, nodeElement)
 {
     var radius = nodeElement.r.baseVal.value;
-    return radius + (node.durationTotal - node.timeWatched);
+    return radius + ((node.timeWatched / node.durationTotal) * 100);
+    //return radius + (node.durationTotal - node.timeWatched);
+    //(node.timeWatched / node.durationTotal) * 100
 }
 
-function getCircleBackgroundColor(completed, options)
+function getCircleBackgroundColor(completed, options, visible)
 {
-    switch (true)
+    if (!visible)
+    {
+        return "transparent";
+    }
+
+    switch (completed)
     {
         case data.isInRange(completed, 75, 99):
             return options.content.inProgressBackgroundColor;
@@ -89,42 +107,65 @@ function getCircleBackgroundColor(completed, options)
 
 export function present(object, options)
 {
-    for (var i = 0; i < object.children.length; i++)
+    for (var i = 0; i < object.children.length; i++) //wrapper
     {
         var parent = object.children[i];
         var parentElement = document.getElementById(parent.id);
 
-        for (var ii = 0; ii < parent.children.length; ii++)
+        for (var ii = 0; ii < parent.children.length; ii++) // node
         {
             var node = parent.children[ii];
             var nodeElement = document.getElementById(node.id);
 
+            // debugger;
             var completed = (node.timeWatched / node.durationTotal) * 100
 
             // dashed parent line
             parentElement.style.r = getTotalLineRadius(node, nodeElement);
 
-            nodeElement.style.fill = getCircleBackgroundColor(completed, options);
+            nodeElement.style.fill = getCircleBackgroundColor(completed, options, true);
 
-            for (var iii = 0; iii < node.children.length; iii++)
+            for (var iii = 0; iii < node.children.length; iii++) // wrapper
             {
-                var leaf = node.children[iii];
-                var leafElement = document.getElementById(leaf.id.replace("w_", ""));
+                var leafParent = node.children[iii];
+                var leafParentElement = document.getElementById(leafParent.id);
+                //var leafParentElement = document.getElementById(leafParent.id.replace("w_", ""));
 
-                if (leafElement)
+
+                for (var iiii = 0; iiii < leafParent.children.length; iiii++) // node
                 {
-                    (function ()
-                    {
-                        var name = leaf.name;
-                        var timeWatchedHours = Math.trunc(node.timeWatched / 60);
-                        var timeWatchedMinutes = Math.trunc(node.timeWatched % 60);
-                        var timeLeftHours = Math.trunc((node.durationTotal - node.timeWatched) / 60);
-                        var timeLeftMinutes = Math.trunc((node.durationTotal - node.timeWatched) % 60);
+                    var leaf = leafParent.children[iiii];
+                    var leafElement = document.getElementById(leaf.id);
+                    var labelElement = document.getElementById("l_" + leaf.id);
 
-                        leafElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
-                        leafElement.addEventListener('mouseout', function () { hideTooltip(); });
-                    }());
+                    var leafCompleted = (leafParent.timeWatched / leafParent.durationTotal) * 100
+
+                    leafParentElement.style.r = getTotalLineRadius(leaf, leafElement);
+
+                    leafElement.style.fill = getCircleBackgroundColor(leafCompleted, options, false);
+
+                    if (leafElement)
+                    {
+                        (function ()
+                        {
+                            var name = leaf.name;
+                            var timeWatchedHours = Math.trunc(leaf.timeWatched / 60);
+                            var timeWatchedMinutes = Math.trunc(leaf.timeWatched % 60);
+                            var timeLeftHours = Math.trunc((leaf.durationTotal - leaf.timeWatched) / 60);
+                            var timeLeftMinutes = Math.trunc((leaf.durationTotal - leaf.timeWatched) % 60);
+
+                            leafElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
+
+                            leafParentElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
+                            /// labelElement.addEventListener('mouseout', function () { hideTooltip(); });
+
+                            // nodeElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
+                            // leafElement.addEventListener('mouseout', function () { hideTooltip(); });
+                        }());
+                    }
+
                 }
+
             }
         }
     }

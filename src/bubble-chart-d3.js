@@ -51,7 +51,9 @@ export function init(that, object, onClick)
     .attr("class", presenter.getLabelClass)
     .style("fill-opacity", presenter.getLabelFillOpacity)
     .style("display", presenter.getLabelDisplay)
-    .text(function (d) { return d.data.name; });
+    .text(function (d) { return d.data.name; })
+
+    .attr("id", function (d) { return d.data && d.data.id ? "l_" + d.data.id : "" });
 
   node = g.selectAll("circle,text");
 
