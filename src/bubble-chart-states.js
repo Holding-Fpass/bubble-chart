@@ -1,6 +1,6 @@
 import { hideTooltip } from "./bubble-chart-tooltip";
 
-export var state;
+
 
 export var states =
 {
@@ -8,6 +8,8 @@ export var states =
     HASH_TAG: "hash_tag",
     TOOLTIP: "tooltip"
 };
+
+
 
 export function setState(newState)
 {
@@ -39,3 +41,7 @@ export function setState(newState)
             break;
     }
 }
+
+export var state = states.CONTENT_TYPE;
+
+window.state = state;

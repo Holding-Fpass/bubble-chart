@@ -66,8 +66,14 @@ export default class BubbleChart extends Component
       }
       else if (d.data && d.data.type == "hash_tag")
       {
-
+        // if (window.state == states.HASH_TAG)
+        // {
         setState(states.CONTENT_TYPE);
+        // }
+        // else
+        // {
+        //   zoom(d, () => setState(states.HASH_TAG));
+        // }
       }
       else
       {

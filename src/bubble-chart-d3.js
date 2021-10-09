@@ -21,7 +21,65 @@ export function init(that, object, onClick)
 
   var pack = d3.pack()
     .size([diameter - margin, diameter - margin])
-    .padding(2);
+    .padding(function (d)
+    {
+
+
+
+      console.log(d.data.name + " " + d.depth);
+
+
+
+      if (d.data && d.data.durationTotal)
+      {
+        var a = d.data.timeWatched / d.data.durationTotal;
+        var b = a * 100;
+        var c = d.r * a;
+        var p = 0;
+
+        c = d.r - (d.r * a);
+        //  console.log(d.data.name + " \t\t\td:" + "\ta:" + a + "\tb:" + b + "\tr:" + d.r + "\tc:" + c + "\t\t" + (d.r - b));
+        //console.log(d.data.name + " \t\t\td:" + d.data.durationTotal + "\tw:" + d.data.timeWatched + "\ta:" + a + "\tb:" + b + "\tr:" + d.r + "\tc:" + c + "\t\t" + (d.r - b));
+
+        // if (d.r - b)
+        // {
+        //   return 2;
+        // }
+
+
+
+        if (d.depth == 1)
+        {
+          p = c; // content time padding
+        }
+        else if (d.depth == 2)
+        {
+          p = 5; // tags distance
+        }
+        else if (d.depth == 3)
+        {
+          p = c * 6; // tag time padding
+        }
+
+        console.log(d.data.name + "\tr:" + d.r + "\tb:" + b + " \t\tp:" + p);
+
+        if (p < 0)
+        {
+          return 5;
+        }
+
+        return p;
+        // return c;// d.r - (d.r * a);
+        //return d.r * (d.data.timeWatched / d.data.durationTotal);
+        //return ((d.data.timeWatched / d.data.durationTotal) * 100);
+      }
+
+
+
+      return 2;
+      //return d.height > 1 ? d.r / 0.35 : 3
+    })
+  //.padding(2);
 
   window.root = d3.hierarchy(object)
     .sum(function (d) { return d.value; })

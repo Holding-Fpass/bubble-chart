@@ -11,18 +11,18 @@ export function prepare(rawData, options)
     {
         var content = root.children[i];
 
-        for (var ii = 0; ii < content.children.length; ii++)
-        {
-            // var tag = content.children[ii];
+        // for (var ii = 0; ii < content.children.length; ii++)
+        // {
+        //     // var tag = content.children[ii];
 
-            wrapChildren(content, "hash_tag_" + i, ii);
-        }
+        //     wrapChildren(content, "hash_tag_" + i, ii);
+        // }
 
-        //wrapChildren(content, "hash_tag", i);
+        wrapChildren(content, "hash_tag", i);
     }
 
-    wrapChildren(root, "content_type", 0);
-
+    wrapChildren(root, "content_type", 0)
+        ;
     return root;
 }
 
@@ -43,7 +43,7 @@ function wrapChildren(item, type, index)
         var child = item.children[i];
 
         var wrapper = clone(child);
-        wrapper.id = "w_" + type + "_" + index + "_" + + i;
+        wrapper.id = "w_" + type + "_" + index + "_" + i;
         wrapper.type = "w_" + type;
         wrapper.children = [child];
 

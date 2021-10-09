@@ -82,7 +82,7 @@ function getCircleBackgroundColor(completed, options, visible)
 {
     if (!visible)
     {
-        return "transparent";
+        return "red";
     }
 
     switch (completed)
@@ -121,9 +121,11 @@ export function present(object, options)
             var completed = (node.timeWatched / node.durationTotal) * 100
 
             // dashed parent line
-            parentElement.style.r = getTotalLineRadius(node, nodeElement);
+            //parentElement.style.r = getTotalLineRadius(node, nodeElement);
 
             nodeElement.style.fill = getCircleBackgroundColor(completed, options, true);
+
+
 
             for (var iii = 0; iii < node.children.length; iii++) // wrapper
             {
@@ -140,9 +142,15 @@ export function present(object, options)
 
                     var leafCompleted = (leafParent.timeWatched / leafParent.durationTotal) * 100
 
-                    leafParentElement.style.r = getTotalLineRadius(leaf, leafElement);
+                    //   leafParentElement.style.r = getTotalLineRadius(leaf, leafParentElement);
+                    //  leafParentElement.style.pointerEvents = "visiblePainted";
 
-                    leafElement.style.fill = getCircleBackgroundColor(leafCompleted, options, false);
+                    //leafElement.style.fill = getCircleBackgroundColor(leafCompleted, options, false);
+
+                    if (leafElement.style.fill == "red")
+                    {
+                        var a = 0;
+                    }
 
                     if (leafElement)
                     {
@@ -156,7 +164,7 @@ export function present(object, options)
 
                             leafElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
 
-                            leafParentElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
+                            //leafParentElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
                             /// labelElement.addEventListener('mouseout', function () { hideTooltip(); });
 
                             // nodeElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
