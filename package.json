@@ -1,6 +1,6 @@
 {
   "name": "@holding-fpass/bubble-chart",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "main": "src/index.js",
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "d3": "^7.0.1",
+    "date-fns": "^2.27.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",

@@ -1,5 +1,6 @@
 import { hideTooltip, showTooltip } from './bubble-chart-tooltip'
 import * as data from './bubble-chart-data'
+import { timeConvert } from './utils/timeConvert'
 
 export function getLabelFillOpacity(d)
 {
@@ -157,18 +158,10 @@ export function present(object, options)
                         (function ()
                         {
                             var name = leaf.name;
-                            var timeWatchedHours = Math.trunc(leaf.timeWatched / 60);
-                            var timeWatchedMinutes = Math.trunc(leaf.timeWatched % 60);
-                            var timeLeftHours = Math.trunc((leaf.durationTotal - leaf.timeWatched) / 60);
-                            var timeLeftMinutes = Math.trunc((leaf.durationTotal - leaf.timeWatched) % 60);
-
-                            leafElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
-
-                            //leafParentElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
-                            /// labelElement.addEventListener('mouseout', function () { hideTooltip(); });
-
-                            // nodeElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
-                            // leafElement.addEventListener('mouseout', function () { hideTooltip(); });
+                            var timeWatched = timeConvert(leaf.timeWatched)
+                            var timeLeft = timeConvert(leaf.durationTotal - leaf.timeWatched)
+                            
+                            leafElement.addEventListener('mouseover', () => showTooltip(name, timeWatched.hoursText, timeWatched.minutesText, timeLeft.hoursText, timeLeft.minutesText));
                         }());
                     }
 
