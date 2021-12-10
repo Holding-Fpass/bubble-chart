@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <title>React App</title>
+
+  <script>
+    var contentCount = 0;
+    var hashtagCount = 0;
+
+    window.addEventListener('load', (event) =>
+    {
+      window.bubbleChart.onHashtagTapped = (data) => console.log(data.name);
+
+      window.bubbleChart.contentClick = (data) =>
+      {
+        document.getElementById("closeButton").style.display = "block";
+
+        console.log("content " + data.id + data.name + contentCount++);
+      };
+
+      window.bubbleChart.hashtagClick = (data) => 
+      {
+        showTooltip(data);
+
+        console.log("hashtag " + data.id + data.name + hashtagCount++);
+      }
+    });
+
+    function zoomOut()
+    {
+      hidePanel();
+
+      window.bubbleChart.zoomOut();
+
+      document.getElementById("closeButton").style.display = "none";
+    }
+
+    function showTooltip(data)
+    {
+      document.getElementById("hashtagPanel").style.display = "block";
+      document.getElementById("hashtag").innerHTML = data.name;
+    }
+
+    function hidePanel()
+    {
+      document.getElementById("hashtagPanel").style.display = "none";
+    }
+  </script>
+
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <div id="hashtagPanel" style="font-size: 28px; 
+  font-weight: bold;
+  color:white;
+  padding:10px;
+  background-color: black;
+ 
+
+  display: none;">
+    <span id="hashtag"></span> -
+    <div onclick="hidePanel();" style="padding: 10px;cursor: pointer;">x
+    </div>
+  </div>
+
+
+  <div id="closeButton" style="font-size: 28px; 
+  font-weight: bold;
+  color:white;
+  padding:10px;
+  background-color: black;
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+  top:10px;
+  display: none;" onclick="zoomOut();">x</div>
+</body>
+
+</html>

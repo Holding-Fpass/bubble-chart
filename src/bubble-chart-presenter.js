@@ -1,6 +1,5 @@
 import { hideTooltip, showTooltip } from './bubble-chart-tooltip'
 import * as data from './bubble-chart-data'
-import { timeConvert } from './utils/timeConvert'
 
 export function getLabelFillOpacity(d)
 {
@@ -110,52 +109,6 @@ export function present(object, options)
             var completed = (node.timeWatched / node.durationTotal) * 100
 
             nodeElement.style.fill = getCircleBackgroundColor(completed, options, true);
-<<<<<<< HEAD
-=======
-
-
-
-            for (var iii = 0; iii < node.children.length; iii++) // wrapper
-            {
-                var leafParent = node.children[iii];
-                var leafParentElement = document.getElementById(leafParent.id);
-                //var leafParentElement = document.getElementById(leafParent.id.replace("w_", ""));
-
-
-                for (var iiii = 0; iiii < leafParent.children.length; iiii++) // node
-                {
-                    var leaf = leafParent.children[iiii];
-                    var leafElement = document.getElementById(leaf.id);
-                    var labelElement = document.getElementById("l_" + leaf.id);
-
-                    var leafCompleted = (leafParent.timeWatched / leafParent.durationTotal) * 100
-
-                    //   leafParentElement.style.r = getTotalLineRadius(leaf, leafParentElement);
-                    //  leafParentElement.style.pointerEvents = "visiblePainted";
-
-                    //leafElement.style.fill = getCircleBackgroundColor(leafCompleted, options, false);
-
-                    if (leafElement.style.fill == "red")
-                    {
-                        var a = 0;
-                    }
-
-                    if (leafElement)
-                    {
-                        (function ()
-                        {
-                            var name = leaf.name;
-                            var timeWatched = timeConvert(leaf.timeWatched)
-                            var timeLeft = timeConvert(leaf.durationTotal - leaf.timeWatched)
-                            
-                            leafElement.addEventListener('mouseover', () => showTooltip(name, timeWatched.hoursText, timeWatched.minutesText, timeLeft.hoursText, timeLeft.minutesText));
-                        }());
-                    }
-
-                }
-
-            }
->>>>>>> 0b4635409a52ae99c9b04d3762a49f655f751c40
         }
     }
 }
