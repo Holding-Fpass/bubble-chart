@@ -24,11 +24,7 @@ export function init(that, object, onClick)
     .padding(function (d)
     {
 
-
-
       console.log(d.data.name + " " + d.depth);
-
-
 
       if (d.data && d.data.durationTotal)
       {
@@ -38,15 +34,6 @@ export function init(that, object, onClick)
         var p = 0;
 
         c = d.r - (d.r * a);
-        //  console.log(d.data.name + " \t\t\td:" + "\ta:" + a + "\tb:" + b + "\tr:" + d.r + "\tc:" + c + "\t\t" + (d.r - b));
-        //console.log(d.data.name + " \t\t\td:" + d.data.durationTotal + "\tw:" + d.data.timeWatched + "\ta:" + a + "\tb:" + b + "\tr:" + d.r + "\tc:" + c + "\t\t" + (d.r - b));
-
-        // if (d.r - b)
-        // {
-        //   return 2;
-        // }
-
-
 
         if (d.depth == 1)
         {
@@ -69,17 +56,12 @@ export function init(that, object, onClick)
         }
 
         return p;
-        // return c;// d.r - (d.r * a);
-        //return d.r * (d.data.timeWatched / d.data.durationTotal);
-        //return ((d.data.timeWatched / d.data.durationTotal) * 100);
       }
 
 
 
       return 2;
-      //return d.height > 1 ? d.r / 0.35 : 3
     })
-  //.padding(2);
 
   window.root = d3.hierarchy(object)
     .sum(function (d) { return d.value; })
@@ -109,20 +91,41 @@ export function init(that, object, onClick)
     .attr("class", presenter.getLabelClass)
     .style("fill-opacity", presenter.getLabelFillOpacity)
     .style("display", presenter.getLabelDisplay)
-    .text(function (d) { return d.data.name; })
+    .style("font-size", function (d) 
+    {
+      if (d.data?.type?.includes("content"))
+      {
+        if (d.r < 50)
+        {
+          return "6px";
+        }
 
-    .attr("id", function (d) { return d.data && d.data.id ? "l_" + d.data.id : "" });
+        if (d.r < 90)
+        {
+          return "8px";
+        }
+      }
+
+      return "16px";
+    })
+    .text(function (d) 
+    {
+      if (d.data.level == 2 || d.data.level == 3)
+      {
+        return d.data.smallName;
+      }
+
+      return d.data.name;
+
+    })
+
+    .attr("id", function (d) { return d.data && d.data.id ? "l_" + d.data.id : "" })
+    .on("click", onClick);
 
   node = g.selectAll("circle,text");
 
   svg
-    .style("background", presenter.defaultHueSaturation)
-    .on("click", function ()
-    {
-      setState(states.CONTENT_TYPE);
-
-      zoom(window.root);
-    });
+    .style("background", presenter.defaultHueSaturation);
 
   zoomTo([window.root.x, window.root.y, window.root.r * 2 + margin]);
 }
@@ -134,10 +137,12 @@ export function zoom(d, callback)
 
   var transition = d3.transition()
     .duration(false ? 7500 : 750)
-    // .duration(d3.event.altKey ? 7500 : 750)
     .tween("zoom", function (d)
     {
-      var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+      var strokeSize = 3;
+      var padding = focus.parent ? focus.parent.r - focus.r + strokeSize + 10 : 0;
+
+      var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin + padding]);
 
       return function (t) { zoomTo(i(t)); };
     });

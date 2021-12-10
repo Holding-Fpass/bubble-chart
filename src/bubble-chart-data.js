@@ -11,28 +11,31 @@ export function prepare(rawData, options)
     {
         var content = root.children[i];
 
-        // for (var ii = 0; ii < content.children.length; ii++)
-        // {
-        //     // var tag = content.children[ii];
+        adjustName(content);
 
-        //     wrapChildren(content, "hash_tag_" + i, ii);
-        // }
+        var clonedContent = clone(content);
+        clonedContent.children = null;
 
-        wrapChildren(content, "hash_tag", i);
+        for (var ii = 0; ii < content.children.length; ii++)
+        {
+            var tag = content.children[ii];
+
+            tag.parent = clonedContent;
+        }
+
+        wrapChildren(content, "hash_tag", i, 2, "w", true);
     }
 
-    wrapChildren(root, "content_type", 0)
-        ;
+    wrapChildren(root, "content_type", 0, 0, "w", false);
+
     return root;
 }
 
-function clone(object)
+function wrapChildren(item, type, index, level, prefix, twoSteps)
 {
-    return JSON.parse(JSON.stringify(object));
-}
 
-function wrapChildren(item, type, index)
-{
+    item.level = 0;
+
     if (!item.children)
     {
         return;
@@ -43,13 +46,73 @@ function wrapChildren(item, type, index)
         var child = item.children[i];
 
         var wrapper = clone(child);
-        wrapper.id = "w_" + type + "_" + index + "_" + i;
-        wrapper.type = "w_" + type;
+        wrapper.id = prefix + "_" + type + "_" + index + "_" + i;
+        wrapper.type = prefix + "_" + type;
         wrapper.children = [child];
+        wrapper.level = level + 1;
 
         child.id = type + "_" + index + "_" + + i;
         child.type = type;
 
         item.children[i] = wrapper;
     }
+}
+
+function adjustName(item)
+{
+    var originalName = item.name.trim();
+
+    if (originalName.length < 3)
+    {
+        return;
+    }
+
+    var spaceIndex = originalName.indexOf(" ");
+
+    if (spaceIndex == -1)
+    {
+        item.smallName = originalName.substring(0, 2);
+    }
+    else
+    {
+        item.smallName = originalName[0] + "" + originalName[spaceIndex + 1];
+    }
+
+    item.originalName = originalName;
+
+    if (item.children && item.children.length > 0)
+    {
+        item.children.forEach(child =>
+        {
+            adjustName(child);
+        });
+    }
+}
+
+function adjustNamew(item)
+{
+    var originalName = item.name.trim();
+
+    if (originalName.length < 3)
+    {
+        return;
+    }
+
+    var spaceIndex = originalName.indexOf(" ");
+
+    if (spaceIndex == -1)
+    {
+        item.smallName = originalName.substring(0, 2);
+    }
+    else
+    {
+        item.smallName = originalName[0] + "" + originalName[spaceIndex + 1];
+    }
+
+    item.originalName = originalName;
+}
+
+function clone(object)
+{
+    return JSON.parse(JSON.stringify(object));
 }

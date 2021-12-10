@@ -2,13 +2,6 @@ import { state, states, setState } from './bubble-chart-states'
 
 export function hideTooltip()
 {
-    // if (state == states.CONTENT_TYPE)
-    // {
-    //     return;
-    // }
-
-    // setState(states.HASH_TAG);
-
     if (document.getElementById("tooltip-bubble-chart"))
     {
         document.getElementById("tooltip-bubble-chart").remove();

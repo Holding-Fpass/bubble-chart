@@ -1,19 +1,17 @@
 import { hideTooltip } from "./bubble-chart-tooltip";
 
-
-
 export var states =
 {
     CONTENT_TYPE: "content_type",
     HASH_TAG: "hash_tag",
+    HASH_TAG_DETAILS: "hash_tag_details",
     TOOLTIP: "tooltip"
 };
-
-
 
 export function setState(newState)
 {
     state = newState;
+    window.state = state;
 
     switch (state)
     {

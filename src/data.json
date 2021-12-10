@@ -2,118 +2,262 @@
   "name": "root",
   "children": [
     {
-      "durationTotal": 23521.94,
-      "timeWatched": 4747.75,
-      "name": "HARD SKILL",
+      "durationTotal": 714.9,
+      "timeWatched": 0.43,
+      "name": "DESENVOLVIMENTO PESSOAL",
       "children": [
         {
-          "name": "PROJETO",
-          "value": 95.88,
-          "durationTotal": 95.88,
-          "timeWatched": 29.33
+          "name": "DESENVOLVIMENTOPESSOAL",
+          "value": 238.3,
+          "durationTotal": 238.3,
+          "timeWatched": 0.14
         },
         {
-          "name": "INOVAÇÃO",
-          "value": 659.35,
-          "durationTotal": 659.35,
-          "timeWatched": 2.14
-        },
-        {
-          "name": "DATASCIENCE",
-          "value": 5623.77,
-          "durationTotal": 5623.77,
-          "timeWatched": 126.11
-        },
-        {
-          "name": "DEEPLEARNING",
-          "value": 1461.65,
-          "durationTotal": 1461.65,
-          "timeWatched": 1425
-        },
-        {
-          "name": "#INTELIGENCIAARTIFICIAL",
-          "value": 2463.4,
-          "durationTotal": 2463.4,
-          "timeWatched": 4.41
-        },
-        {
-          "name": "MACHINELEARNING",
-          "value": 1557.53,
-          "durationTotal": 1557.53,
-          "timeWatched": 1454.33
-        },
-        {
-          "name": "TECNOLOGIA",
-          "value": 659.35,
-          "durationTotal": 659.35,
-          "timeWatched": 2.14
-        },
-        {
-          "name": "INTELIGENCIAARTIFICIAL",
-          "value": 4638.36,
-          "durationTotal": 4638.36,
-          "timeWatched": 1547.14
+          "name": "PNL",
+          "value": 238.3,
+          "durationTotal": 238.3,
+          "timeWatched": 0.14
         },
         {
           "name": "EXCELENCIA",
-          "value": 2463.4,
-          "durationTotal": 2463.4,
-          "timeWatched": 4.41
-        },
-        {
-          "name": "ALGORITMOS",
-          "value": 643,
-          "durationTotal": 643,
-          "timeWatched": 1.69
-        },
-        {
-          "name": "MACHINELEARNINGCANVAS",
-          "value": 738.88,
-          "durationTotal": 738.88,
-          "timeWatched": 31.03
-        },
-        {
-          "name": "TEACHABLE MACHINE",
-          "value": 2517.36,
-          "durationTotal": 2517.36,
-          "timeWatched": 120
+          "value": 238.3,
+          "durationTotal": 238.3,
+          "timeWatched": 0.14
         }
       ]
     },
     {
-      "durationTotal": 2751.74,
-      "timeWatched": 716,
-      "name": "SOFT SKILL",
+      "durationTotal": 9696.12,
+      "timeWatched": 5551.61,
+      "name": "INOVAÇÃO",
       "children": [
         {
-          "name": "HACKTHEFUTURE",
-          "value": 220.81,
-          "durationTotal": 220.81,
-          "timeWatched": 118.33
+          "name": "CAPITALISMO",
+          "value": 481.34,
+          "durationTotal": 481.34,
+          "timeWatched": 1.2
         },
         {
-          "name": "FUTURO",
-          "value": 220.81,
-          "durationTotal": 220.81,
-          "timeWatched": 118.33
+          "name": "HABILIDADESDOFUTURO",
+          "value": 840.18,
+          "durationTotal": 840.18,
+          "timeWatched": 583.33
+        },
+        {
+          "name": "PROFISSIONALDOFUTURO",
+          "value": 455.81,
+          "durationTotal": 455.81,
+          "timeWatched": 445
+        },
+        {
+          "name": "CUSTOMARGINALZERO",
+          "value": 481.34,
+          "durationTotal": 481.34,
+          "timeWatched": 1.2
+        },
+        {
+          "name": "DESENVOLVIMENTOPROFISSIONAL",
+          "value": 229.79,
+          "durationTotal": 229.79,
+          "timeWatched": 225
+        },
+        {
+          "name": "HACKTHEFUTURE",
+          "value": 1771.75,
+          "durationTotal": 1771.75,
+          "timeWatched": 1131
         },
         {
           "name": "INOVAÇÃO",
-          "value": 917.25,
-          "durationTotal": 917.25,
-          "timeWatched": 238.67
+          "value": 2520.91,
+          "durationTotal": 2520.91,
+          "timeWatched": 1624.33
+        },
+        {
+          "name": "FIRSTPRINCIPLE",
+          "value": 138.77,
+          "durationTotal": 138.77,
+          "timeWatched": 135
         },
         {
           "name": "TECNOLOGIA",
-          "value": 696.43,
-          "durationTotal": 696.43,
-          "timeWatched": 120.33
+          "value": 1655.44,
+          "durationTotal": 1655.44,
+          "timeWatched": 289.54
+        },
+        {
+          "name": "FUTURISMO",
+          "value": 1120.79,
+          "durationTotal": 1120.79,
+          "timeWatched": 1116
+        }
+      ]
+    },
+    {
+      "durationTotal": 4820.54,
+      "timeWatched": 1381.84,
+      "name": "INTELIGÊNCIA ARTIFICIAL",
+      "children": [
+        {
+          "name": "ESTATÍSTICA",
+          "value": 473.36,
+          "durationTotal": 473.36,
+          "timeWatched": 341
+        },
+        {
+          "name": "TECNOLOGIA",
+          "value": 659.35,
+          "durationTotal": 659.35,
+          "timeWatched": 48.61
+        },
+        {
+          "name": "AGRUPAMENTO",
+          "value": 474.14,
+          "durationTotal": 474.14,
+          "timeWatched": 71
         },
         {
           "name": "INTELIGENCIAARTIFICIAL",
-          "value": 696.43,
-          "durationTotal": 696.43,
-          "timeWatched": 120.33
+          "value": 1133.49,
+          "durationTotal": 1133.49,
+          "timeWatched": 119.61
+        },
+        {
+          "name": "DATASCIENCE",
+          "value": 473.36,
+          "durationTotal": 473.36,
+          "timeWatched": 341
+        },
+        {
+          "name": "INOVAÇÃO",
+          "value": 659.35,
+          "durationTotal": 659.35,
+          "timeWatched": 48.61
+        },
+        {
+          "name": "PANDAS",
+          "value": 473.36,
+          "durationTotal": 473.36,
+          "timeWatched": 341
+        },
+        {
+          "name": "ALGORITMO",
+          "value": 474.14,
+          "durationTotal": 474.14,
+          "timeWatched": 71
+        }
+      ]
+    },
+    {
+      "durationTotal": 742.19,
+      "timeWatched": 141.89,
+      "name": "NEGÓCIO",
+      "children": [
+        {
+          "name": "INTERNACIONALIZAÇÃO",
+          "value": 247.4,
+          "durationTotal": 247.4,
+          "timeWatched": 47.3
+        },
+        {
+          "name": "CRIATIVIDADE",
+          "value": 247.4,
+          "durationTotal": 247.4,
+          "timeWatched": 47.3
+        },
+        {
+          "name": "NEGÓCIOS",
+          "value": 247.4,
+          "durationTotal": 247.4,
+          "timeWatched": 47.3
+        }
+      ]
+    },
+    {
+      "durationTotal": 1379.37,
+      "timeWatched": 60,
+      "name": "CARREIRA",
+      "children": [
+        {
+          "name": "CRIATIVIDADE",
+          "value": 459.79,
+          "durationTotal": 459.79,
+          "timeWatched": 20
+        },
+        {
+          "name": "TRANSFORMAÇÃO",
+          "value": 459.79,
+          "durationTotal": 459.79,
+          "timeWatched": 20
+        },
+        {
+          "name": "CARREIRA",
+          "value": 459.79,
+          "durationTotal": 459.79,
+          "timeWatched": 20
+        }
+      ]
+    },
+    {
+      "durationTotal": 437.35,
+      "timeWatched": 141,
+      "name": "SOFT SKILL",
+      "children": [
+        {
+          "name": "BLOCKCHAIN",
+          "value": 145.78,
+          "durationTotal": 145.78,
+          "timeWatched": 47
+        },
+        {
+          "name": "TOKENIZAÇÃO",
+          "value": 145.78,
+          "durationTotal": 145.78,
+          "timeWatched": 47
+        },
+        {
+          "name": "CRIPTOATIVOS",
+          "value": 145.78,
+          "durationTotal": 145.78,
+          "timeWatched": 47
+        }
+      ]
+    },
+    {
+      "durationTotal": 1343.93,
+      "timeWatched": 76.32,
+      "name": "COMUNICAÇÃO",
+      "children": [
+        {
+          "name": "CRIATIVIDADE",
+          "value": 447.98,
+          "durationTotal": 447.98,
+          "timeWatched": 25.44
+        },
+        {
+          "name": "COMUNICAÇÃO",
+          "value": 447.98,
+          "durationTotal": 447.98,
+          "timeWatched": 25.44
+        },
+        {
+          "name": "HISTÓRIA",
+          "value": 447.98,
+          "durationTotal": 447.98,
+          "timeWatched": 25.44
+        }
+      ]
+    },
+    {
+      "durationTotal": 250.05,
+      "timeWatched": 81,
+      "name": "Sustentabilidade",
+      "children": [
+        {
+          "name": "CRIATIVIDADE",
+          "value": 250.05,
+          "durationTotal": 250.05,
+          "timeWatched": 81
         }
       ]
     }

@@ -51,16 +51,6 @@ export function getCircleClass(d)
         {
             return "node--parent--nodata";
         }
-
-
-        // if (d.data.durationTotal)
-        // {
-        //     return "node--parent--leaf--hidden";
-        // }
-        // else
-        // {
-        //     return "node--parent--nodata";
-        // }
     }
     else if (d.data && d.data.type && d.data.type.startsWith("hash_tag"))
     {
@@ -73,9 +63,8 @@ export function getCircleClass(d)
 function getTotalLineRadius(node, nodeElement)
 {
     var radius = nodeElement.r.baseVal.value;
+
     return radius + ((node.timeWatched / node.durationTotal) * 100);
-    //return radius + (node.durationTotal - node.timeWatched);
-    //(node.timeWatched / node.durationTotal) * 100
 }
 
 function getCircleBackgroundColor(completed, options, visible)
@@ -117,64 +106,9 @@ export function present(object, options)
             var node = parent.children[ii];
             var nodeElement = document.getElementById(node.id);
 
-            // debugger;
             var completed = (node.timeWatched / node.durationTotal) * 100
 
-            // dashed parent line
-            //parentElement.style.r = getTotalLineRadius(node, nodeElement);
-
             nodeElement.style.fill = getCircleBackgroundColor(completed, options, true);
-
-
-
-            for (var iii = 0; iii < node.children.length; iii++) // wrapper
-            {
-                var leafParent = node.children[iii];
-                var leafParentElement = document.getElementById(leafParent.id);
-                //var leafParentElement = document.getElementById(leafParent.id.replace("w_", ""));
-
-
-                for (var iiii = 0; iiii < leafParent.children.length; iiii++) // node
-                {
-                    var leaf = leafParent.children[iiii];
-                    var leafElement = document.getElementById(leaf.id);
-                    var labelElement = document.getElementById("l_" + leaf.id);
-
-                    var leafCompleted = (leafParent.timeWatched / leafParent.durationTotal) * 100
-
-                    //   leafParentElement.style.r = getTotalLineRadius(leaf, leafParentElement);
-                    //  leafParentElement.style.pointerEvents = "visiblePainted";
-
-                    //leafElement.style.fill = getCircleBackgroundColor(leafCompleted, options, false);
-
-                    if (leafElement.style.fill == "red")
-                    {
-                        var a = 0;
-                    }
-
-                    if (leafElement)
-                    {
-                        (function ()
-                        {
-                            var name = leaf.name;
-                            var timeWatchedHours = Math.trunc(leaf.timeWatched / 60);
-                            var timeWatchedMinutes = Math.trunc(leaf.timeWatched % 60);
-                            var timeLeftHours = Math.trunc((leaf.durationTotal - leaf.timeWatched) / 60);
-                            var timeLeftMinutes = Math.trunc((leaf.durationTotal - leaf.timeWatched) % 60);
-
-                            leafElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
-
-                            //leafParentElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
-                            /// labelElement.addEventListener('mouseout', function () { hideTooltip(); });
-
-                            // nodeElement.addEventListener('mouseover', () => showTooltip(name, timeWatchedHours, timeWatchedMinutes, timeLeftHours, timeLeftMinutes));
-                            // leafElement.addEventListener('mouseout', function () { hideTooltip(); });
-                        }());
-                    }
-
-                }
-
-            }
         }
     }
 }
