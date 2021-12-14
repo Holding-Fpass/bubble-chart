@@ -93,7 +93,10 @@ export function init(that, object, onClick)
     .style("display", presenter.getLabelDisplay)
     .style("font-size", function (d) 
     {
-      if (d.data?.type?.includes("content"))
+      var { data = {} } = d
+      var { type = '' } = data
+
+      if (type.includes("content"))
       {
         if (d.r < 50)
         {
